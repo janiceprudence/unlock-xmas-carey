@@ -1,6 +1,6 @@
 # Strong Bailey Christmas Countdown
 
-A kawaii Christmas countdown featuring the Strong Bailey mascot, an interactive snow globe, drifting frost, a gold wand cursor, and an embedded Spotify playlist.
+A kawaii Christmas countdown featuring Strong Bailey, an interactive snow globe unlocking Mariah Carey, drifting frost, a gold wand cursor, photo booth and an embedded Spotify playlist.
 
 ## Features
 
