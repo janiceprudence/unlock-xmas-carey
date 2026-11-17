@@ -232,7 +232,7 @@
         const index=nextBoothSlot();if(!boothStream||index<0)return;
         if(!boothVideo.videoWidth){setBoothStatus('Camera is warming up?');return}
         try{
-          const shot=document.createElement('canvas');shot.width=900;shot.height=506;const shotCtx=shot.getContext('2d');
+          const shot=document.createElement('canvas');shot.width=boothVideo.videoWidth;shot.height=boothVideo.videoHeight;const shotCtx=shot.getContext('2d');
           shotCtx.translate(shot.width,0);shotCtx.scale(-1,1);shotCtx.drawImage(boothVideo,0,0,shot.width,shot.height);
           boothShots[index]=shot.toDataURL('image/jpeg',.94);$('booth-cell-'+index).classList.add('has-shot');$('booth-shot-'+index).src=boothShots[index];boothRetakeButton.hidden=false;
         }catch(error){console.error('Photo capture failed:',error);setBoothStatus('Could not capture the photo. Please try again.');return}
