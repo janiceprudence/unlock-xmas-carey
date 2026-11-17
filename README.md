@@ -76,16 +76,6 @@ Then open <http://localhost:8000>. On Windows you can use `py -m http.server 800
 - Deleting or retaking photos clears the previous export. Photos stay in memory and disappear when the page is refreshed or closed.
 - Use localhost or HTTPS for the full branded export. When opened as a local file, decorative images are omitted from the export to avoid browser canvas restrictions.
 
-## Publish with GitHub Pages
-
-1. Create a GitHub repository and upload `index.html`, `README.md`, and the `assets` folder.
-2. Open **Settings → Pages** in the repository.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select the default branch and the repository root, then save.
-5. Open the Pages URL GitHub displays after deployment.
-
-For a custom domain, use an absolute URL for the Open Graph image in the `og:image` metadata.
-
 ## Spotify notes
 
 The page embeds the supplied playlist; it does not sign in to or control a visitor's Spotify account. Visitors start or pause playback inside Spotify's player. An internet connection is required.
