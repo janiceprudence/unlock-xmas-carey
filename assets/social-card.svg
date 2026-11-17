@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="night" cx="52%" cy="20%" r="90%"><stop stop-color="#2a5065"/><stop offset="1" stop-color="#0b1d2c"/></radialGradient>
+    <radialGradient id="orb"><stop stop-color="#80cde8" stop-opacity=".45"/><stop offset="1" stop-color="#163e55" stop-opacity=".2"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" rx="36" fill="url(#night)"/>
+  <g fill="#eafaff" opacity=".65"><circle cx="105" cy="98" r="2"/><circle cx="1040" cy="115" r="3"/><circle cx="970" cy="510" r="2"/><circle cx="570" cy="73" r="2"/><path d="m1060 245 5 13 13 5-13 5-5 13-5-13-13-5 13-5z"/></g>
+  <text x="86" y="112" fill="#f4b5bf" font-family="Georgia,serif" font-size="22" font-style="italic">A very special Christmas countdown</text>
+  <text x="82" y="232" fill="#f7f3e9" font-family="Georgia,serif" font-size="92">Free <tspan fill="#bcecff" font-style="italic">Mariah.</tspan></text>
+  <text x="88" y="285" fill="#c2d0d5" font-family="Arial,sans-serif" font-size="25">One pop icon. One enchanted snow globe. One very important thaw.</text>
+  <circle cx="912" cy="383" r="186" fill="url(#orb)" stroke="#d9f7ff" stroke-opacity=".85" stroke-width="5"/>
+  <path d="M850 458q65-145 130 0l30 50H821z" fill="#fff4e9"/>
+  <ellipse cx="915" cy="354" rx="44" ry="55" fill="#f1c7b6"/>
+  <path d="M870 353q9-68 54-66t42 66q-26-24-49-14-27 13-47 14" fill="#573b39"/>
+  <path d="M822 515q90-17 180 0l-16 38q-74 20-148 0z" fill="#d8b367" stroke="#ffe8a8" stroke-width="4"/>
+  <text x="88" y="416" fill="#f6d998" font-family="Arial,sans-serif" font-size="18" letter-spacing="5">HKT · UTC+8</text>
+  <text x="88" y="486" fill="#f7f3e9" font-family="Georgia,serif" font-size="34">December 25 · Midnight</text>
+  <text x="88" y="535" fill="#a9c1cb" font-family="Arial,sans-serif" font-size="20">Shake the globe. Preview the thaw. Count down to Christmas.</text>
+</svg>

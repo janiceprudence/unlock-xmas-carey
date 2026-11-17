@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#102b3c" />
+  <meta name="description" content="A kawaii Strong Bailey Christmas countdown with Mariah in a snow globe." />
+  <meta property="og:title" content="Free Mariah! · Strong Bailey Christmas" />
+  <meta property="og:description" content="The thaw begins at midnight, HKT, on Christmas Day." />
+  <title>Free Mariah! · Strong Bailey Christmas</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:image" content="assets/social-card.svg">
+  <style>
+    :root{color-scheme:dark;--ink:#f7f3e9;--muted:#b3c5ce;--ice:#bcecff;--pink:#f4b5bf;--gold:#f6d998;--night:#0b1d2c;--panel:rgba(255,255,255,.075)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;min-height:100vh;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 50% 17%,#264d63 0,#142e40 37%,#0b1d2c 76%);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.48;background-image:radial-gradient(1px 1px at 8% 13%,#fff 50%,transparent 60%),radial-gradient(2px 2px at 84% 24%,#fff 50%,transparent 60%),radial-gradient(1px 1px at 63% 8%,#fff 50%,transparent 60%),radial-gradient(1px 1px at 27% 42%,#fff 50%,transparent 60%),radial-gradient(2px 2px at 94% 71%,#fff 50%,transparent 60%),radial-gradient(1px 1px at 6% 79%,#fff 50%,transparent 60%);background-size:340px 290px}
+    .wrap{position:relative;z-index:1;width:min(1120px,100% - 40px);margin:auto;padding:24px 0 48px}.topbar{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#c3d2d8}.brand{display:flex;align-items:center;gap:9px}.brand-mark{width:27px;height:27px;border:1px solid #6f9ab0;border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:14px}.timezone{padding:8px 12px;border:1px solid #ffffff25;border-radius:99px;letter-spacing:.1em}
+    header{text-align:center;padding:60px 0 20px}.eyebrow{color:var(--pink);font:italic 17px Georgia,serif;letter-spacing:.05em}.headline{font:500 clamp(38px,7vw,74px)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.055em;margin:14px 0 13px}.headline em{font-weight:400;color:var(--ice)}.subhead{color:#c2d0d5;font-size:15px;line-height:1.6;margin:0 auto;max-width:490px}
+    .main{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);gap:56px;align-items:center;max-width:1000px;margin:16px auto 0}.globe-column{display:grid;justify-items:center;position:relative}.globe-halo{position:absolute;top:12%;width:min(86%,440px);aspect-ratio:1;border-radius:50%;background:#9fe7ff12;filter:blur(45px)}
+    .globe{width:min(100%,470px);aspect-ratio:1;position:relative;z-index:1;cursor:pointer;user-select:none;transform:translateZ(0);transition:transform .25s}.globe:hover{transform:scale(1.015)}.globe.shaking{animation:shake .7s ease-in-out}.globe svg{display:block;width:100%;height:100%;filter:drop-shadow(0 22px 28px #0007)}@keyframes shake{0%,100%{transform:rotate(0)}15%{transform:rotate(-5deg) translateX(-7px)}35%{transform:rotate(5deg) translateX(7px)}55%{transform:rotate(-3deg)}75%{transform:rotate(2deg)}}
+
+    .frost-field{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;contain:strict}
+    .frost-particle{position:absolute;top:-8vh;color:#c9f4ff;text-shadow:0 0 9px #c9f4ffb0,0 0 20px #72c8eb88;font-size:var(--size);line-height:1;animation:frost-float var(--duration) linear var(--delay) infinite;will-change:transform,opacity}
+    @keyframes frost-float{0%{transform:translate3d(0,-8vh,0) rotate(0);opacity:0}12%{opacity:.72}82%{opacity:.64}100%{transform:translate3d(var(--sway),110vh,0) rotate(240deg);opacity:0}}
+    @media(prefers-reduced-motion:reduce){.frost-particle{animation:none;display:none}}
+    .snowflake{animation:drift var(--d,7s) linear infinite;animation-delay:var(--delay,0s);transform-box:fill-box;transform-origin:center}@keyframes drift{0%{transform:translateY(-24px) rotate(0);opacity:0}12%{opacity:.95}88%{opacity:.9}100%{transform:translateY(95px) rotate(110deg);opacity:0}}.crack{opacity:0;transition:opacity .35s}.crack.on{opacity:.8}.globe-caption{margin-top:-3px;color:#adc4ce;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.globe-caption span{color:var(--ice)}
+    .countdown-panel{padding:10px 0 4px}.countdown-label{font-size:11px;text-transform:uppercase;letter-spacing:.19em;color:var(--gold)}.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin:17px 0 13px}.unit{padding:15px 8px 13px;border-top:1px solid #bcecff55;border-bottom:1px solid #bcecff20;background:linear-gradient(180deg,#ffffff0a,#ffffff02);text-align:center}.num{font:500 clamp(30px,4vw,44px)/1 Georgia,serif;font-variant-numeric:tabular-nums;letter-spacing:-.05em}.unit-label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#adc4ce;margin-top:8px}.deadline{font-size:12px;color:#abc1cb}.promise{margin:28px 0 22px;border-left:2px solid var(--pink);padding:2px 0 2px 16px;color:#d8e2e4;font:italic 17px/1.48 Georgia,serif}.promise strong{color:#fff;font-weight:400}.actions{display:flex;gap:10px;align-items:center}.button{border:0;border-radius:999px;padding:13px 18px;background:var(--ice);color:#132a39;font-weight:700;cursor:pointer;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px);background:#def7ff}.button.secondary{background:transparent;color:#d8e9ef;border:1px solid #ffffff42}.button.secondary:hover{background:#ffffff12}.microcopy{font-size:11px;color:#9eb6c1;margin-top:12px;line-height:1.55}
+    .playlist{margin:58px auto 0;max-width:840px;padding:24px 27px 25px;border:1px solid #ffffff20;border-radius:22px;background:linear-gradient(135deg,#ffffff0d,#ffffff05);box-shadow:0 20px 55px #0002;display:grid;grid-template-columns:1fr auto;gap:14px 20px;align-items:center}.playlist-kicker{font-size:10px;color:var(--pink);letter-spacing:.18em;text-transform:uppercase}.playlist h2{font:500 27px/1.05 Georgia,serif;margin:7px 0 4px}.playlist p{font-size:12px;color:#adbec5;margin:0}.spotify-badge{border:1px solid #ffffff24;border-radius:99px;padding:9px 13px;color:#c4f2d0;font-size:11px;letter-spacing:.1em;text-transform:uppercase}.embed{grid-column:1/-1;width:100%;height:152px;border:0;border-radius:13px;margin-top:4px;background:#15232e}.embed-note{grid-column:1/-1;color:#8fa8b3;font-size:11px;margin-top:-5px}.footer{margin-top:30px;text-align:center;color:#809ba7;font-size:11px;letter-spacing:.05em}.footer span{color:#e5c98b}
+    #glass-glint{stroke-dasharray:180;stroke-dashoffset:0;animation:glint 5.5s ease-in-out infinite}@keyframes glint{0%,65%,100%{opacity:.44;stroke-dashoffset:0}78%{opacity:1;stroke-dashoffset:180}90%{opacity:.7;stroke-dashoffset:0}}
+    .released .headline em,.release-preview .headline em{color:#ffd3a1}.released .globe,.release-preview .globe{filter:drop-shadow(0 0 25px #ffd98b55)}.released .globe-caption span,.release-preview .globe-caption span{color:#ffe8b2}.released .unit{border-color:#f6d99888}
+    .button-icon{width:15px;height:15px;vertical-align:-3px;margin-right:5px}
+    .animation-status{min-height:19px;margin-top:8px;color:#b9d8e3;font:italic 13px Georgia,serif;letter-spacing:.02em;text-align:center}.preview-button{display:block;margin:7px auto 0;padding:7px 10px;color:#f6d998;background:none;border:0;border-bottom:1px solid #f6d99855;font:italic 13px Georgia,serif;cursor:pointer}.preview-button:hover{color:#fff0c9;border-color:#fff0c9}.shaking #snow .snowflake{animation-duration:.9s!important}.released #diva,.release-preview #diva{animation:divaRelease 1.65s cubic-bezier(.2,.8,.2,1) .15s both;transform-box:fill-box;transform-origin:center bottom}.released #orb-interior,.release-preview #orb-interior{animation:glassMelt 1.2s ease .2s both;transform-box:fill-box;transform-origin:center}.released #glass-shell,.release-preview #glass-shell{animation:glassMelt 1s ease .25s both;transform-box:fill-box;transform-origin:center}.released #snow .snowflake,.release-preview #snow .snowflake{animation:releaseSnow 1.25s ease-out both}.released #releaseStars,.release-preview #releaseStars{animation:starBurst 1.5s ease-out .15s both}
+    @keyframes divaRelease{0%{transform:translateY(0) scale(1);filter:drop-shadow(0 0 0 #fff0)}35%{transform:translateY(-20px) scale(1.03);filter:drop-shadow(0 0 12px #fff4)}100%{transform:translateY(-92px) scale(1.08);filter:drop-shadow(0 0 19px #ffe9aa)}}@keyframes glassMelt{0%{opacity:1;transform:scale(1)}100%{opacity:.08;transform:scale(1.12)}}@keyframes releaseSnow{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(150px) scale(0)}}@keyframes starBurst{0%{opacity:0;transform:scale(.5)}30%{opacity:1}100%{opacity:0;transform:scale(1.4)}}
+    @media(max-width:800px){.wrap{width:min(100% - 32px,560px)}header{padding:45px 0 9px}.main{grid-template-columns:1fr;gap:9px;margin-top:8px}.globe{width:min(92vw,390px)}.countdown-panel{text-align:center}.promise{text-align:left;max-width:420px;margin:22px auto}.actions{justify-content:center}.microcopy{max-width:400px;margin:12px auto 0}.playlist{margin-top:43px;padding:20px}.playlist h2{font-size:24px}}
+    @media(max-width:430px){.wrap{width:calc(100% - 24px);padding-top:17px}.topbar{font-size:10px}.timezone{padding:7px 9px}.headline{font-size:44px}.subhead{font-size:13px}.timer{gap:6px}.unit{padding:13px 4px 11px}.num{font-size:34px}.unit-label{font-size:8px}.playlist{grid-template-columns:1fr;gap:10px}.spotify-badge{justify-self:start}.embed{height:152px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+    html,body{cursor:url("assets/magic-wand-cursor.svg") 3 3,auto}
+    .button,.preview-button,.globe,a{cursor:url("assets/magic-wand-cursor.svg") 3 3,pointer}
+    @media(pointer:coarse){html,body,.button,.preview-button,.globe,a{cursor:auto}}
+  
+
+    :root{color-scheme:light;--ink:#234b48;--muted:#62817d;--ice:#bceeff;--pink:#f06da0;--gold:#f8cf68;--night:#fff4f8;--panel:#fff}
+    body{color:var(--ink);font-family:"Trebuchet MS","Arial Rounded MT Bold",system-ui,sans-serif;background-color:#fff4f8;background-image:radial-gradient(#f6b6ce 1.5px,transparent 1.5px),radial-gradient(#fff 2px,transparent 2px);background-size:28px 28px,56px 56px;background-position:0 0,14px 14px}
+    body:before{opacity:.13;background-size:320px 280px}
+    .wrap{width:min(1120px,100% - 32px);padding:0 0 30px}
+    .topbar{margin:0 -16px;padding:8px 16px;background:#ee6798;border-bottom:4px dashed #ffc9dc;border-radius:0 0 18px 18px;color:#fff;letter-spacing:.1em}
+    .brand img{display:block;width:72px;height:64px;object-fit:contain;filter:drop-shadow(0 2px 0 #b83f70)}
+    .nav-links{display:flex;gap:8px}.nav-links a{padding:8px 13px;border:1px solid #ffffff6a;border-radius:999px;color:#fff;text-decoration:none;font-size:10px;font-weight:900;letter-spacing:.1em;background:#ffffff18}
+    .timezone{padding:7px 11px;border:1px solid #fff7;border-radius:99px;background:#d95385;color:#fff;font-size:10px;font-weight:800}
+    header{text-align:center;padding:21px 0 5px}.eyebrow{display:inline-block;padding:6px 13px;border:1px dashed #e88bab;border-radius:99px;background:#fff;color:#d64f83;font:900 10px/1.2 "Trebuchet MS",sans-serif;letter-spacing:.14em}
+    .headline{margin:8px 0 0;color:#e65488;font:900 clamp(38px,6vw,58px)/.98 "Trebuchet MS","Arial Rounded MT Bold",sans-serif;letter-spacing:-.045em;text-shadow:2px 3px 0 #fff,4px 5px 0 #f6bdd2}.headline em{color:#2b5c53;font-style:normal;font-weight:900}
+    .main{grid-template-columns:minmax(0,1.03fr) minmax(350px,.97fr);gap:24px;max-width:1000px;margin:8px auto 0;align-items:center}
+    .globe-column{padding:0 0 2px}.globe-halo{background:#f6a5c940;filter:blur(40px)}.globe{width:min(100%,430px)}.globe svg{filter:drop-shadow(0 13px 18px #71354e30)}
+    .bailey-hero{position:absolute;z-index:3;right:-3%;bottom:6%;width:clamp(108px,16vw,158px);filter:drop-shadow(0 5px 4px #31554b35);animation:bailey-bob 3.8s ease-in-out infinite;pointer-events:none}@keyframes bailey-bob{0%,100%{transform:translateY(0) rotate(3deg)}50%{transform:translateY(-9px) rotate(-3deg)}}
+    .globe-caption{margin-top:-2px;padding:5px 11px;border:1px dashed #f1aac5;border-radius:99px;background:#fff;color:#d64f83;font-size:9px;font-weight:900;letter-spacing:.15em}
+    .animation-status{min-height:16px;margin-top:3px;color:#789690;font:italic 11px "Trebuchet MS",sans-serif}
+    .countdown-panel{padding:22px 20px 17px;border:3px solid #ffc6da;border-radius:28px;background:#fffdfd;box-shadow:0 8px 0 #f7d7e3,0 16px 32px #a8466a18;position:relative}
+    .countdown-panel:before{content:"♡";position:absolute;right:18px;top:10px;color:#f3aac3;font-size:25px}
+    .countdown-label{display:inline-block;padding:6px 11px;border-radius:99px;background:#fff0f5;color:#d64f83;font-size:10px;font-weight:900;letter-spacing:.15em}
+    .timer{gap:7px;margin:15px 0 10px}.unit{padding:13px 3px 10px;border:2px dashed #ffc2d7;border-radius:16px;background:#fff4f8;text-align:center}.unit:nth-child(2){background:#f0fbf7;border-color:#b8e4d5}.unit:nth-child(3){background:#fff8e9;border-color:#f4dda3}.unit:nth-child(4){background:#f8f3ff;border-color:#d8c9f5}.num{font:900 clamp(25px,3.5vw,39px)/1 "Trebuchet MS",sans-serif;letter-spacing:-.04em;color:#234b48}.unit-label{margin-top:6px;color:#71908a;font-size:8px;font-weight:900;letter-spacing:.1em}
+    .deadline{text-align:center;color:#789690;font-size:11px;font-weight:700;letter-spacing:.08em}.promise[hidden]{display:none!important}
+    .actions{justify-content:center;gap:8px;margin:14px 0 0}.button{padding:12px 17px;border:2px solid #d85588;border-radius:999px;background:#f06da0;color:#fff;font-size:13px;font-weight:900;box-shadow:0 4px 0 #c74b7b}.button:hover{transform:translateY(-2px);background:#f782ab}.button.secondary{border-color:#83cdb8;background:#dff6ed;color:#24584d;box-shadow:0 4px 0 #a9dbc9}.button.secondary:hover{background:#ecfff6}
+    .preview-button{margin:7px auto 0;padding:6px 12px;border:0;color:#b9597d;font:800 11px "Trebuchet MS",sans-serif}.preview-button:hover{color:#d64f83}
+    .playlist{max-width:980px;margin:19px auto 0;padding:15px 19px 17px;border:3px dashed #f4afc8;border-radius:25px;background:#fff;box-shadow:0 7px 0 #f9dce7,0 15px 30px #a8466a12;grid-template-columns:1fr;gap:10px}
+    .playlist-head{display:flex;justify-content:space-between;align-items:center;min-height:100px;gap:12px}.playlist-title{padding-left:6px}.playlist-kicker{color:#d64f83;font-size:9px;font-weight:900;letter-spacing:.14em}.playlist h2{margin:5px 0;color:#2b5c53;font:900 23px/1.05 "Trebuchet MS",sans-serif}.playlist-fruit{width:min(46%,370px);max-height:145px;object-fit:contain;filter:drop-shadow(0 4px 3px #7c3c5725)}
+    .spotify-badge{display:none}.embed{width:100%;height:152px;margin:0;border:2px solid #f7c5d7;border-radius:16px;background:#fff7fa}.embed-note{display:none}
+    .footer{margin-top:15px;color:#bb7390;font-size:10px;font-weight:900;letter-spacing:.12em}
+    .frost-particle{color:#fff;font-size:var(--size);text-shadow:0 0 5px #f06da0,0 0 12px #f8b6cf,0 0 18px #fff}
+    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:800px){.wrap{width:min(100% - 24px,560px);padding-top:0}.topbar{margin:0 -12px;padding:6px 12px}.brand img{width:58px;height:52px}.nav-links{gap:4px}.nav-links a{padding:7px 8px;font-size:8px}.timezone{font-size:8px;padding:6px 8px}header{padding:18px 0 6px}.main{grid-template-columns:1fr;gap:4px;margin-top:2px}.globe{width:min(86vw,350px)}.bailey-hero{right:2%;bottom:6%;width:105px}.countdown-panel{max-width:480px;width:100%;margin:0 auto}.playlist{margin-top:16px;padding:13px}.playlist-head{min-height:82px}.playlist-fruit{width:44%;max-height:112px}}
+    @media(max-width:430px){.headline{font-size:42px}.timer{gap:4px}.unit{padding:11px 2px 9px;border-radius:13px}.num{font-size:29px}.unit-label{font-size:7px}.countdown-panel{padding:18px 12px 13px}.actions{gap:6px}.button{padding:10px 13px;font-size:12px}.bailey-hero{width:92px;right:0;bottom:4%}.playlist h2{font-size:20px}.playlist-head{min-height:72px}.playlist-kicker{font-size:8px}.playlist-fruit{width:46%;max-height:86px}}
+    @media(prefers-reduced-motion:reduce){.bailey-hero{animation:none}.frost-particle{display:none}}
+
+    .photo-booth{max-width:1000px;margin:16px auto 20px;padding:0 10px;text-align:center}.booth-heading>span{display:inline-block;padding:5px 12px;border:1px dashed #e88bab;border-radius:99px;background:#fff;color:#d64f83;font-size:9px;font-weight:900;letter-spacing:.15em}.booth-heading h2{margin:7px 0 1px;color:#2b5c53;font:900 clamp(22px,3.4vw,30px)/1.05 "Trebuchet MS",sans-serif}.booth-heading p{margin:3px 0 10px;color:#a36a81;font-size:11px;font-weight:700}
+    .booth-card{width:100%;aspect-ratio:16/9;padding:clamp(8px,1.7vw,18px);display:flex;flex-direction:column;gap:clamp(5px,1vw,10px);border:5px solid #2c6056;border-radius:25px;background:linear-gradient(140deg,#fff8fb,#ffe8f0);box-shadow:0 8px 0 #efb1c7,0 16px 28px #a8466a18;overflow:hidden}
+    .booth-print-head{height:15%;min-height:42px;display:flex;justify-content:space-between;align-items:center;padding:0 1.3%;text-align:left}.booth-brand{display:flex;align-items:center;gap:6px;color:#24584d;font-size:clamp(9px,1.4vw,15px);font-weight:1000;letter-spacing:.06em}.booth-brand img{width:clamp(34px,5.8vw,62px);height:100%;max-height:64px;object-fit:contain}.booth-brand small{display:block;margin-top:2px;color:#d64f83;font-size:.65em;letter-spacing:.14em}.booth-date{color:#d64f83;font-size:clamp(9px,1.3vw,13px);font-weight:1000;letter-spacing:.13em;text-align:right}.booth-date small{font-size:.72em;color:#748d82}
+    .booth-grid{flex:1;min-height:0;display:grid;grid-template:1fr 1fr / 1fr 1fr;gap:clamp(4px,.8vw,9px)}.photo-cell{position:relative;min-width:0;min-height:0;overflow:hidden;border:3px solid #fff;border-radius:13px;background:linear-gradient(135deg,#fbe4ed,#e7f5ee);box-shadow:0 2px 5px #2e514322}.slot-empty{position:absolute;inset:0;display:grid;align-content:center;justify-items:center;color:#e2749c;font-size:clamp(21px,3vw,34px);font-weight:900}.slot-empty small{margin-top:3px;font-size:clamp(8px,1.1vw,12px);letter-spacing:.15em}.booth-shot{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.photo-cell.has-shot .booth-shot{display:block}.photo-cell.has-shot .slot-empty,.photo-cell.camera-live .slot-empty{display:none}.booth-video{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}.photo-cell.camera-live .booth-video{display:block}.slot-number{position:absolute;left:6px;top:6px;z-index:2;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#fffdf0;color:#d64f83;font-size:9px;font-weight:900;box-shadow:0 1px 4px #263d3433}.booth-print-foot{height:17%;min-height:36px;display:flex;align-items:center;justify-content:center;position:relative;color:#d64f83;font-size:clamp(8px,1.3vw,14px);font-weight:1000;letter-spacing:.14em}.booth-print-foot img{position:absolute;right:1%;bottom:-27%;width:24%;height:140%;object-fit:contain;pointer-events:none}
+    .booth-controls{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0 0}.booth-btn{padding:9px 14px;border:2px solid #d85588;border-radius:999px;background:#f06da0;color:white;font:900 12px "Trebuchet MS",sans-serif;box-shadow:0 3px 0 #c74b7b}.booth-btn:disabled{opacity:.45;box-shadow:none}.booth-snap{border-color:#83cdb8;background:#dff6ed;color:#24584d;box-shadow:0 3px 0 #a9dbc9}.booth-retake{border-color:#c8b7e7;background:#f4efff;color:#5d4a7d;box-shadow:0 3px 0 #c8b7e7}.booth-save{border-color:#e3bd64;background:#fff2c5;color:#785b1e;box-shadow:0 3px 0 #e3bd64}.booth-status{min-height:15px;margin-top:8px;color:#a36a81;font-size:10px;font-weight:700}.booth-btn:not(:disabled){cursor:url("assets/magic-wand-cursor.svg") 3 3,pointer}
+    .photo-delete{display:none;position:absolute;right:6px;top:6px;z-index:3;padding:6px 9px;border:2px solid #fff;border-radius:99px;background:#a22d55;color:#fff;font:700 11px "Trebuchet MS",sans-serif;cursor:pointer;opacity:0}.photo-cell.has-shot .photo-delete{display:block}.photo-cell:hover .photo-delete,.photo-cell:focus-within .photo-delete{opacity:1}.photo-delete:focus-visible{outline:3px solid #24584d;outline-offset:2px}@media(hover:none){.photo-cell.has-shot .photo-delete{opacity:1}}.booth-preview img{display:block;width:100%;max-width:800px;margin:12px auto;border-radius:12px}.booth-preview p{font-size:12px;color:#785b1e}.booth-preview[hidden]{display:none}
+    @media(max-width:800px){.photo-booth{margin:14px auto 18px;padding:0}.booth-card{border-width:4px;border-radius:18px}.booth-print-head{min-height:32px}.booth-print-foot{min-height:26px}.booth-controls{gap:6px}.booth-btn{padding:8px 11px;font-size:10px}}
+    @media(max-width:430px){.booth-heading h2{font-size:22px}.booth-heading p{font-size:10px}.booth-card{padding:6px;gap:4px;border-radius:15px}.booth-grid{gap:4px}.photo-cell{border-width:2px;border-radius:8px}.slot-number{width:17px;height:17px;left:3px;top:3px;font-size:7px}.booth-print-head{min-height:25px}.booth-brand{gap:3px}.booth-brand img{width:28px}.booth-print-foot{min-height:22px;font-size:7px}.booth-print-foot img{width:28%}.booth-btn{padding:8px 9px;font-size:9px}.booth-status{font-size:9px}}
+  </style>
+</head>
+<body>
+  <div class="frost-field" aria-hidden="true"></div>
+  <div class="wrap" id="page">
+    <nav class="topbar" aria-label="Main navigation"><a class="brand" href="#top" aria-label="Strong Bailey home"><img src="assets/strong-bailey-logo.png" alt="Strong Bailey" /></a><div class="nav-links"><a href="#timer">COUNTDOWN</a><a href="#playlist">MUSIC</a></div><span class="timezone">HKT ✦ UTC+8</span></nav>
+    <header id="top"><div class="eyebrow">✿ CHRISTMAS COUNTDOWN ✿</div><h1 class="headline">Free <em>Mariah!</em></h1></header>
+    <main class="main">
+      <div class="globe-column">
+        <div class="globe-halo"></div>
+        <div class="globe" id="globe" role="button" tabindex="0" aria-label="Shake the snow globe">
+          <svg viewBox="0 0 500 500" role="img" aria-label="A glamorous singer frozen inside a sparkling snow globe">
+            <defs>
+              <radialGradient id="glass" cx="35%" cy="23%" r="78%"><stop stop-color="#dbf9ff" stop-opacity=".75"/><stop offset=".28" stop-color="#80cde8" stop-opacity=".28"/><stop offset=".68" stop-color="#256383" stop-opacity=".26"/><stop offset="1" stop-color="#c1f0ff" stop-opacity=".55"/></radialGradient>
+              <linearGradient id="inside" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#204b67"/><stop offset="1" stop-color="#102d43"/></linearGradient>
+              <linearGradient id="coat" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f7e4d0"/><stop offset=".5" stop-color="#fff7ee"/><stop offset="1" stop-color="#d4b8a6"/></linearGradient>
+              <clipPath id="orb"><circle cx="250" cy="229" r="184"/></clipPath>
+              <filter id="blur"><feGaussianBlur stdDeviation="2.5"/></filter>
+            </defs>
+            <ellipse cx="250" cy="442" rx="140" ry="19" fill="#050d14" opacity=".42"/>
+            <g id="scene" clip-path="url(#orb)">
+              <circle id="orb-interior" cx="250" cy="229" r="184" fill="url(#inside)"/>
+              <path d="M56 305 Q160 260 250 305 T444 295 V430 H56Z" fill="#d8f7ff" opacity=".12"/>
+              <path d="M65 342 Q150 315 221 340 T443 329 V422 H65Z" fill="#e7faff" opacity=".23"/>
+              <g fill="#effbff" opacity=".82"><path d="M112 246l7 2-7 2-2 7-2-7-7-2 7-2 2-7z"/><path d="M371 266l6 2-6 2-2 6-2-6-6-2 6-2 2-6z"/><path d="M329 126l5 1.5-5 1.5-1.5 5-1.5-5-5-1.5 5-1.5 1.5-5z"/><circle cx="146" cy="148" r="2"/><circle cx="354" cy="187" r="2.4"/><circle cx="96" cy="292" r="1.8"/></g>
+              <g id="snow" fill="#ecfbff">
+                <circle class="snowflake" style="--d:5s;--delay:-1s" cx="150" cy="180" r="3"/><circle class="snowflake" style="--d:7s;--delay:-5s" cx="350" cy="170" r="2.5"/><circle class="snowflake" style="--d:6s;--delay:-3s" cx="113" cy="220" r="2"/><circle class="snowflake" style="--d:8s;--delay:-2s" cx="388" cy="230" r="3"/><circle class="snowflake" style="--d:6s;--delay:-4s" cx="182" cy="120" r="2"/><circle class="snowflake" style="--d:7s;--delay:-6s" cx="305" cy="285" r="2"/><circle class="snowflake" style="--d:5s;--delay:-2s" cx="258" cy="125" r="2.6"/><circle class="snowflake" style="--d:8s;--delay:-7s" cx="207" cy="280" r="2.1"/>
+              </g>
+              <path d="M99 184 Q121 91 226 63" fill="none" stroke="#fff" stroke-width="19" opacity=".10" stroke-linecap="round" filter="url(#blur)"/>
+            </g>
+            <!-- Chibi Mariah rises out of the globe when the thaw animation plays. -->
+            <image id="diva" href="assets/chibi-mariah.png" x="151" y="92" width="198" height="297" preserveAspectRatio="xMidYMax meet" />
+            <circle id="glass-shell" cx="250" cy="229" r="184" fill="url(#glass)" stroke="#d9f7ff" stroke-opacity=".86" stroke-width="3"/>
+            <path id="glass-glint" d="M106 162 Q127 105 183 82" fill="none" stroke="#fff" stroke-width="8" opacity=".58" stroke-linecap="round"/>
+            <path d="M383 259 Q371 306 339 330" fill="none" stroke="#c1f4ff" stroke-width="4" opacity=".36" stroke-linecap="round"/>
+            <path class="crack" id="crack1" d="M366 151l-19 25 12 11-22 25 10 12-21 25" fill="none" stroke="#e8fbff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="crack" id="crack2" d="M132 258l22 12-8 18 28 7 7 18" fill="none" stroke="#e8fbff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="crack" id="crack3" d="M319 104l-11 21 14 10-15 22 11 12-14 17" fill="none" stroke="#e8fbff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <g id="releaseStars" fill="#fff0b8"><path d="M210 153l5 13 13 5-13 5-5 13-5-13-13-5 13-5z"/><path d="M300 190l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/><circle cx="177" cy="202" r="3"/><circle cx="328" cy="260" r="3"/></g>
+            <path d="M116 386 Q250 369 384 386 L367 421 Q250 451 133 421Z" fill="#d3a95e" stroke="#ffe8a8" stroke-width="3"/>
+            <ellipse cx="250" cy="388" rx="134" ry="20" fill="#f3d68f" stroke="#fff0bf" stroke-width="3"/>
+            <path d="M140 402 Q250 420 360 402" fill="none" stroke="#9a7040" stroke-opacity=".55" stroke-width="2"/>
+            <text x="250" y="396" text-anchor="middle" fill="#72512f" font-size="11" font-family="Georgia" letter-spacing="3">DECEMBER 25</text>
+          </svg>
+        </div>
+        <img class="bailey-hero" src="assets/strong-bailey-mascot.png" alt="" aria-hidden="true" /><div class="globe-caption">✦ SHAKE ME ✦</div><div class="animation-status visually-hidden" id="animationStatus" role="status" aria-live="polite">Bailey says: shake me!</div>
+      </div>
+      <section class="countdown-panel" id="timer" aria-label="Christmas countdown">
+        <div class="countdown-label" id="countdownLabel">UNTIL CHRISTMAS</div>
+        <div class="timer" id="timerDigits" role="timer" aria-live="off">
+          <div class="unit"><div class="num" id="days">--</div><div class="unit-label">DAYS</div></div>
+          <div class="unit"><div class="num" id="hours">--</div><div class="unit-label">HRS</div></div>
+          <div class="unit"><div class="num" id="minutes">--</div><div class="unit-label">MIN</div></div>
+          <div class="unit"><div class="num" id="seconds">--</div><div class="unit-label">SEC</div></div>
+        </div>
+        <div class="deadline" id="deadline">25 DEC · HONG KONG</div>
+        <p class="promise" id="promise" hidden>At midnight, Mariah is free.</p>
+        <div class="actions"><button class="button" id="shakeButton">❄ Shake!</button><button class="button secondary" id="playButton">♫ Playlist</button></div>
+        <button class="preview-button" id="previewButton">✨ Preview the thaw</button>
+        <span class="visually-hidden" id="playHint" aria-live="polite">Spotify’s player is just below. Press Play there to start the music.</span>
+      </section>
+    </main>
+
+    <section class="photo-booth" id="booth" aria-label="Strong Bailey Christmas photo booth">
+      <div class="booth-heading"><span>✿ PHOTO TIME ✿</span><h2>Bailey’s Christmas Booth</h2><p>4 snaps · 1 keepsake</p></div>
+      <div class="booth-card" id="boothCard">
+        <div class="booth-print-head"><div class="booth-brand"><img src="assets/strong-bailey-logo.png" alt="" /><span>STRONG BAILEY<small>MERRY & BRIGHT</small></span></div><div class="booth-date">25 DEC<br /><small>HKT</small></div></div>
+        <div class="booth-grid" id="boothGrid">
+          <div class="photo-cell" id="booth-cell-0"><div class="slot-empty">♡<small>01</small></div><img class="booth-shot" id="booth-shot-0" alt="Photo 1" /><video class="booth-video" id="boothVideo" autoplay playsinline muted></video><span class="slot-number">01</span></div>
+          <div class="photo-cell" id="booth-cell-1"><div class="slot-empty">♡<small>02</small></div><img class="booth-shot" id="booth-shot-1" alt="Photo 2" /><span class="slot-number">02</span></div>
+          <div class="photo-cell" id="booth-cell-2"><div class="slot-empty">♡<small>03</small></div><img class="booth-shot" id="booth-shot-2" alt="Photo 3" /><span class="slot-number">03</span></div>
+          <div class="photo-cell" id="booth-cell-3"><div class="slot-empty">♡<small>04</small></div><img class="booth-shot" id="booth-shot-3" alt="Photo 4" /><span class="slot-number">04</span></div>
+        </div>
+        <div class="booth-print-foot"><span>✦ MERRY BAILEY CHRISTMAS ✦</span><img src="assets/strong-bailey-stickers.png" alt="" /></div>
+      </div>
+      <div class="booth-controls">
+        <button class="booth-btn booth-camera" id="boothCameraButton">📷 Turn on camera</button>
+        <button class="booth-btn booth-snap" id="boothSnapButton" disabled>Take photo 1 of 4</button>
+        <button class="booth-btn booth-retake" id="boothRetakeButton" hidden>Retake all</button>
+        <button class="booth-btn booth-save" id="boothDownloadButton" hidden>Download photo</button>
+        <button class="booth-btn booth-save" id="boothCopyButton" hidden>Copy photo</button>
+      </div>
+      <div class="booth-preview" id="boothPreview" hidden><img id="boothPreviewImage" alt="Your completed Strong Bailey Christmas collage" /><p>Right-click or press and hold the image to save or copy it if your browser blocks the buttons.</p><a id="boothSaveLink" download="strong-bailey-christmas-photo-booth.png" target="_blank" rel="noopener">Open / save full-size photo</a></div>
+      <div class="booth-status" id="boothStatus" role="status" aria-live="polite">Photos stay on this device.</div>
+    </section>
+    <section class="playlist" id="playlist" aria-label="Christmas playlist">
+      <div class="playlist-head"><div class="playlist-title"><div class="playlist-kicker">♫ STRONG BAILEY’S HOLIDAY MIX</div><h2>Christmas playlist</h2></div><img class="playlist-fruit" src="assets/strawberry-apples.png" alt="A cuddly bunch of kawaii felt strawberry-apples" /></div>
+      <iframe class="embed" title="Spotify Christmas playlist player" src="https://open.spotify.com/embed/playlist/0Z4q7NT0UHtYbKp4slrsOq?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </section>
+    <footer class="footer">♡ STRONG BAILEY · HKT ♡</footer>
+  </div>
+  <script>
+    (()=>{
+      const frostField=document.querySelector('.frost-field');
+      if(frostField){for(let i=0;i<26;i++){const particle=document.createElement('span');particle.className='frost-particle';particle.textContent=i%5===0?'✦':'❄';particle.style.left=(Math.random()*100)+'%';particle.style.setProperty('--size',(8+Math.random()*13)+'px');particle.style.setProperty('--duration',(13+Math.random()*18)+'s');particle.style.setProperty('--delay',(-Math.random()*30)+'s');particle.style.setProperty('--sway',((Math.random()*120)-60)+'px');frostField.appendChild(particle)}}
+      const target=Date.UTC(2026,11,24,16,0,0); // Dec 25 00:00 in HKT (UTC+8)
+      const $=id=>document.getElementById(id); let shaken=0,previewing=false;
+      function tick(){const left=target-Date.now();if(left<=0){$('days').textContent='00';$('hours').textContent='00';$('minutes').textContent='00';$('seconds').textContent='00';$('countdownLabel').textContent='It’s Christmas — the thaw is here';$('promise').innerHTML='The ice has melted. <strong>Mariah is free.</strong> Merry Christmas!';$('deadline').textContent='December 25, 2026 · Hong Kong Time';document.body.classList.add('released');return}
+        const d=Math.floor(left/86400000),h=Math.floor(left%86400000/3600000),m=Math.floor(left%3600000/60000),s=Math.floor(left%60000/1000);
+        $('days').textContent=String(d).padStart(2,'0');$('hours').textContent=String(h).padStart(2,'0');$('minutes').textContent=String(m).padStart(2,'0');$('seconds').textContent=String(s).padStart(2,'0');}
+      function shake(){const globe=$('globe');globe.classList.remove('shaking');void globe.offsetWidth;globe.classList.add('shaking');shaken=Math.min(3,shaken+1);$('crack1').classList.toggle('on',shaken>=1);$('crack2').classList.toggle('on',shaken>=2);$('crack3').classList.toggle('on',shaken>=3);const notes=['Bailey says: shake me!','A tiny crack!','More snow magic!','The globe is full of sparkle!'];$('animationStatus').textContent=notes[shaken];setTimeout(()=>globe.classList.remove('shaking'),800)}
+      function previewThaw(){if(previewing){document.body.classList.remove('release-preview');previewing=false;$('previewButton').textContent='✨ Preview the thaw';$('animationStatus').textContent=shaken?['','A hairline crack! The snow is starting to swirl.','The frost is glowing. One more shake to wake the stars.','The globe is charged with Christmas magic. The real release is at midnight HKT.'][shaken]:'The ice is holding. The magic is waking.';return}document.body.classList.add('release-preview');previewing=true;$('previewButton').textContent='Reset the snow globe ↺';$('animationStatus').textContent='✨ Magic preview!'}
+      $('globe').addEventListener('click',shake);$('globe').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();shake()}});$('shakeButton').addEventListener('click',shake);
+      $('playButton').addEventListener('click',()=>{$('playlist').scrollIntoView({behavior:'smooth',block:'center'});$('playHint').textContent='Press Play in Spotify’s player to start your Christmas playlist.';});$('previewButton').addEventListener('click',previewThaw);
+
+      const boothVideo=$('boothVideo'),boothShots=Array(4).fill(null);let boothStream=null,boothPhotoBlob=null,boothPhotoURL=null,boothRevision=0;
+      const boothCameraButton=$('boothCameraButton'),boothSnapButton=$('boothSnapButton'),boothRetakeButton=$('boothRetakeButton'),boothDownloadButton=$('boothDownloadButton'),boothCopyButton=$('boothCopyButton');
+      function setBoothStatus(message){$('boothStatus').textContent=message}
+      function nextBoothSlot(){return boothShots.findIndex(shot=>!shot)}
+      function clearBoothExport(){
+        boothRevision++;boothPhotoBlob=null;
+        if(boothPhotoURL)URL.revokeObjectURL(boothPhotoURL);
+        boothPhotoURL=null;$('boothPreview').hidden=true;$('boothPreviewImage').removeAttribute('src');$('boothSaveLink').removeAttribute('href');
+        boothDownloadButton.hidden=true;boothCopyButton.hidden=true;
+      }
+      function showBoothPreview(){$('boothPreview').hidden=false}
+      function positionBoothCamera(){
+        const index=nextBoothSlot();
+        document.querySelectorAll('.photo-cell').forEach(cell=>cell.classList.remove('camera-live'));
+        boothSnapButton.hidden=index<0;boothSnapButton.disabled=!boothStream;
+        if(index<0)return;
+        boothSnapButton.textContent='Take photo '+(index+1)+' of 4';
+        if(boothStream){const cell=$('booth-cell-'+index);cell.appendChild(boothVideo);cell.classList.add('camera-live')}
+      }
+      function stopBoothCamera(){if(boothStream){boothStream.getTracks().forEach(track=>track.stop());boothStream=null}boothVideo.srcObject=null;boothVideo.remove();document.querySelectorAll('.photo-cell').forEach(cell=>cell.classList.remove('camera-live'))}
+      boothCameraButton.addEventListener('click',async()=>{
+        if(boothStream||nextBoothSlot()<0)return;
+        if(!navigator.mediaDevices?.getUserMedia){setBoothStatus('Camera needs HTTPS or localhost. Open the secure site and try again.');return}
+        boothCameraButton.disabled=true;
+        try{
+          boothStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:false});
+          if(nextBoothSlot()<0){stopBoothCamera();return}
+          boothVideo.srcObject=boothStream;positionBoothCamera();await boothVideo.play();
+          boothCameraButton.hidden=true;boothSnapButton.disabled=false;setBoothStatus('Camera ready! Smile, Bailey!');
+        }catch(error){
+          stopBoothCamera();positionBoothCamera();boothCameraButton.hidden=false;
+          const name=error?.name;
+          setBoothStatus(name==='NotAllowedError'||name==='PermissionDeniedError'?'Allow camera access in your browser settings, then tap again.':name==='NotFoundError'||name==='DevicesNotFoundError'?'No camera was found on this device.':name==='NotReadableError'||name==='TrackStartError'?'Camera is busy. Close other camera apps and try again.':'Camera could not start. Check browser permission and try again.');
+        }finally{boothCameraButton.disabled=false}
+      });
+      document.querySelectorAll('.photo-cell').forEach((cell,index)=>{
+        const button=document.createElement('button');button.type='button';button.className='photo-delete';button.textContent='Delete';
+        button.setAttribute('aria-label','Delete photo '+(index+1)+' to retake it');cell.appendChild(button);
+        button.addEventListener('click',()=>{
+          if(!boothShots[index])return;
+          clearBoothExport();boothShots[index]=null;cell.classList.remove('has-shot');$('booth-shot-'+index).removeAttribute('src');
+          boothRetakeButton.hidden=!boothShots.some(Boolean);boothCameraButton.hidden=!!boothStream;positionBoothCamera();
+          (boothStream?boothSnapButton:boothCameraButton).focus();
+          setBoothStatus('Photo '+(index+1)+' deleted. '+(boothStream?'Take its replacement.':'Turn on the camera to retake it.'));
+        });
+      });
+      boothSnapButton.addEventListener('click',()=>{
+        const index=nextBoothSlot();if(!boothStream||index<0)return;
+        if(!boothVideo.videoWidth){setBoothStatus('Camera is warming up?');return}
+        try{
+          const shot=document.createElement('canvas');shot.width=900;shot.height=506;const shotCtx=shot.getContext('2d');
+          shotCtx.translate(shot.width,0);shotCtx.scale(-1,1);shotCtx.drawImage(boothVideo,0,0,shot.width,shot.height);
+          boothShots[index]=shot.toDataURL('image/jpeg',.94);$('booth-cell-'+index).classList.add('has-shot');$('booth-shot-'+index).src=boothShots[index];boothRetakeButton.hidden=false;
+        }catch(error){console.error('Photo capture failed:',error);setBoothStatus('Could not capture the photo. Please try again.');return}
+        positionBoothCamera();
+        if(nextBoothSlot()>=0){setBoothStatus('Photo '+(index+1)+' captured!');return}
+        stopBoothCamera();clearBoothExport();const revision=boothRevision;
+        setBoothStatus('Preparing your photo?');
+        composeBooth(boothShots.slice()).then(blob=>{
+          if(revision!==boothRevision)return;
+          boothPhotoBlob=blob;boothPhotoURL=URL.createObjectURL(blob);$('boothPreviewImage').src=boothPhotoURL;$('boothSaveLink').href=boothPhotoURL;
+          boothDownloadButton.hidden=false;boothCopyButton.hidden=false;showBoothPreview();
+          setBoothStatus('Your Strong Bailey photo is ready! Download it or copy it below.');
+        }).catch(error=>{
+          if(revision!==boothRevision)return;
+          console.error('Photo composition failed:',error);
+          setBoothStatus('Could not create the photo. Open the site over HTTPS or localhost, then retake a photo to try again.');
+        });
+      });
+      boothRetakeButton.addEventListener('click',()=>{
+        stopBoothCamera();clearBoothExport();boothShots.fill(null);
+        for(let i=0;i<4;i++){$('booth-cell-'+i).classList.remove('has-shot');$('booth-shot-'+i).removeAttribute('src')}
+        positionBoothCamera();boothCameraButton.hidden=false;boothRetakeButton.hidden=true;setBoothStatus('Photos stay on this device.');
+      });
+      function roundedRect(ctx,x,y,w,h,r){const q=Math.max(0,Math.min(r,w/2,h/2));ctx.beginPath();ctx.moveTo(x+q,y);ctx.arcTo(x+w,y,x+w,y+h,q);ctx.arcTo(x+w,y+h,x,y+h,q);ctx.arcTo(x,y+h,x,y,q);ctx.arcTo(x,y,x+w,y,q);ctx.closePath()}
+      function loadImage(src){return new Promise((resolve,reject)=>{const img=new Image(),timer=setTimeout(()=>reject(new Error('Image loading timed out.')),10000);img.onload=()=>{clearTimeout(timer);resolve(img)};img.onerror=()=>{clearTimeout(timer);reject(new Error('Image could not load.'))};img.src=src})}
+      function drawCover(ctx,img,x,y,w,h){const scale=Math.max(w/img.width,h/img.height),sw=w/scale,sh=h/scale,sx=(img.width-sw)/2,sy=(img.height-sh)/2;ctx.drawImage(img,sx,sy,sw,sh,x,y,w,h)}
+      async function composeBooth(shots){const W=1600,H=900,pad=34,gap=12,header=116,footer=98,canvas=document.createElement('canvas');canvas.width=W;canvas.height=H;const ctx=canvas.getContext('2d');if(!ctx)throw new Error('Canvas is unavailable in this browser.');ctx.fillStyle='#fff2f7';ctx.fillRect(0,0,W,H);roundedRect(ctx,10,10,W-20,H-20,38);ctx.strokeStyle='#2c6056';ctx.lineWidth=12;ctx.stroke();roundedRect(ctx,25,25,W-50,H-50,30);ctx.strokeStyle='#f3abc4';ctx.lineWidth=5;ctx.stroke();
+        const [logo,stickers]=await Promise.all(['assets/strong-bailey-logo.png','assets/strong-bailey-stickers.png'].map(src=>location.protocol==='file:'?Promise.resolve(null):loadImage(src).catch(()=>null)));if(logo)ctx.drawImage(logo,48,30,88,88);ctx.fillStyle='#24584d';ctx.font='900 34px Trebuchet MS, sans-serif';ctx.fillText('STRONG BAILEY',145,69);ctx.fillStyle='#d64f83';ctx.font='bold 20px Trebuchet MS, sans-serif';ctx.fillText('CHRISTMAS PHOTO BOOTH',145,99);ctx.textAlign='right';ctx.fillStyle='#d64f83';ctx.font='900 23px Trebuchet MS, sans-serif';ctx.fillText('25 DEC  ·  HKT',W-55,76);ctx.textAlign='left';
+        const gx=pad,gy=header+14,gw=W-pad*2,gh=H-header-footer-28,cw=(gw-gap)/2,ch=(gh-gap)/2;for(let i=0;i<4;i++){const x=gx+(i%2)*(cw+gap),y=gy+Math.floor(i/2)*(ch+gap);roundedRect(ctx,x,y,cw,ch,18);ctx.save();ctx.clip();ctx.fillStyle='#f9dce7';ctx.fillRect(x,y,cw,ch);const photo=await loadImage(shots[i]);drawCover(ctx,photo,x,y,cw,ch);ctx.restore();ctx.lineWidth=8;ctx.strokeStyle='#fff';roundedRect(ctx,x,y,cw,ch,18);ctx.stroke();ctx.fillStyle='#fff7dc';ctx.beginPath();ctx.arc(x+34,y+34,22,0,Math.PI*2);ctx.fill();ctx.fillStyle='#d64f83';ctx.font='900 18px Trebuchet MS,sans-serif';ctx.fillText('0'+(i+1),x+20,y+41)}
+        ctx.textAlign='center';ctx.fillStyle='#d64f83';ctx.font='900 24px Trebuchet MS,sans-serif';ctx.fillText('✦ MERRY BAILEY CHRISTMAS ✦',500,H-38);if(stickers)ctx.drawImage(stickers,W-440,H-160,365,183);return new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('The browser could not encode the photo.')),'image/png'))}
+      boothDownloadButton.addEventListener('click',()=>{
+        if(!boothPhotoURL){setBoothStatus('Your photo is still being prepared. Please wait a moment.');return}
+        showBoothPreview();
+        try{
+          const a=document.createElement('a');a.href=boothPhotoURL;a.download='strong-bailey-christmas-photo-booth.png';document.body.appendChild(a);a.click();a.remove();
+          setBoothStatus('Download requested. If no file appears, use the full-size link or right-click / press and hold the preview to save.');
+        }catch(error){console.error('Download failed:',error);setBoothStatus('Download was blocked. Right-click or press and hold the preview to save it.')}
+      });
+      boothCopyButton.addEventListener('click',async()=>{
+        if(!boothPhotoBlob){setBoothStatus('Your photo is still being prepared. Please wait a moment.');return}
+        const revision=boothRevision;
+        if(!window.isSecureContext||!navigator.clipboard?.write||typeof ClipboardItem==='undefined'){
+          showBoothPreview();setBoothStatus('Photo copying is unavailable here. Open the site over HTTPS or localhost, or right-click / press and hold the preview to copy or save.');return;
+        }
+        try{await navigator.clipboard.write([new ClipboardItem({'image/png':boothPhotoBlob})]);if(revision===boothRevision)setBoothStatus('Photo copied to your clipboard!')}
+        catch(error){if(revision!==boothRevision)return;console.error('Clipboard write failed:',error);showBoothPreview();setBoothStatus('Clipboard access is blocked. Allow clipboard access in your browser, or right-click / press and hold the preview to copy or save.')}
+      });
+      window.addEventListener('pagehide',stopBoothCamera);
+      tick();setInterval(tick,1000);
+    })();
+  </script>
+</body>
+</html>
