@@ -28,6 +28,35 @@ A kawaii Christmas countdown featuring the Strong Bailey mascot, an interactive 
 
 The globe frame stays inline in `index.html` so CSS can animate the glass, snow, cracks, and character layers. Character art and the Strong Bailey stickers are separate transparent PNG assets. The page has no JavaScript dependencies.
 
+## How HTML, CSS, and JavaScript work together
+
+Everything runs in the browser from `index.html`:
+
+- **HTML** defines the page structure, buttons, four photo slots, video element, and Spotify embed.
+- **CSS** controls the layout, colours, responsive styling, animations, and when each photo's Delete button appears on hover or keyboard focus. Touch devices always show Delete on captured photos.
+- **JavaScript** handles the countdown, button interactions, camera access, photo capture, collage creation, downloading, and copying.
+
+### Where JavaScript is used
+
+The JavaScript lives inside the `<script>` block near the bottom of [index.html](index.html). There is no separate `.js` file or JavaScript framework.
+
+| Feature | What JavaScript does | Main functions or handlers |
+| --- | --- | --- |
+| Christmas countdown | Calculates the remaining time, updates it every second, and triggers the Christmas release. | `tick()`, `setInterval()` |
+| Interactive snow globe | Responds to clicks and keyboard input, reveals cracks, and triggers CSS animations. | `shake()` |
+| Preview the thaw | Toggles the Christmas animation preview and resets it. | `previewThaw()` |
+| Playlist button | Scrolls to Spotify and updates the playback hint. Playback itself is handled by Spotify's embedded player. | `playButton` click handler |
+| Camera | Requests permission, shows the live feed in the next empty photo slot, and stops the camera after four shots or when leaving the page. | `positionBoothCamera()`, `stopBoothCamera()`, `boothCameraButton` click handler |
+| Take photos | Captures a mirrored frame from the camera using Canvas and keeps the photo in browser memory. | `boothSnapButton` click handler |
+| Delete one photo | Adds a Delete button to each slot, removes only the selected photo, and clears the previous collage so the empty slot can be retaken. | `.photo-delete` click handler, `nextBoothSlot()`, `clearBoothExport()` |
+| Retake all | Clears all four photos and the generated collage. | `boothRetakeButton` click handler |
+| Build the collage | Draws the four photos, frame, text, and branding onto a Canvas and exports a PNG. | `composeBooth()`, `loadImage()`, `drawCover()`, `roundedRect()` |
+| Download photo | Uses a browser object URL and a download link to save the PNG. | `boothDownloadButton` click handler |
+| Copy photo | Writes the PNG to the clipboard through the browser Clipboard API. | `boothCopyButton` click handler, `navigator.clipboard.write()` |
+| Status messages | Explains camera, capture, export, and permission states. | `setBoothStatus()` |
+
+Photo capture and export use built-in browser APIs. No Docker, Java service, Python backend, database, or separate Save button is required. Python is only an optional way to serve the files locally.
+
 ## Run locally
 
 Serve the folder over HTTP so the Spotify embed and relative assets load consistently:
