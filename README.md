@@ -92,6 +92,12 @@ The page embeds the supplied playlist; it does not sign in to or control a visit
 
 The countdown currently targets Christmas 2026. To reuse it another year, update the UTC target in the page's JavaScript and the displayed date in the page text.
 
-## License
+## Licensing
 
-No license is specified. Add one before granting reuse rights.
+The website code is licensed under the MIT License (see [LICENSE](LICENSE)).
+
+Strong Bailey character, logo, and original artwork © 2026 Janice Mook.
+All rights reserved. These assets are not covered by the MIT License.
+
+Third-party images, likenesses, and playlist content remain subject to
+their respective rights holders' terms.
