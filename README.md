@@ -40,9 +40,9 @@ Then open <http://localhost:8000>. On Windows you can use `py -m http.server 800
 
 ## Photo booth saving and retakes
 
-- After four photos, JavaScript prepares a PNG collage and displays a full-size preview. Download photo saves this collage; no separate Save button is required.
+- After four photos, JavaScript prepares a PNG collage. Download photo saves this collage; no separate Save button is required.
 - Copy photo needs HTTPS (or localhost), a browser supporting image clipboard writes, and clipboard permission. Embedded previews may block copying or downloading; open the site directly in a browser.
-- If the browser blocks a button, right-click or press and hold the preview to save or copy the image, or use Open / save full-size photo.
+- If copying is blocked, use Download photo. If downloading is blocked, allow downloads in your browser and try again.
 - Hover over a captured photo to reveal Delete. Keyboard users can Tab to Delete; touch devices always show it. Deleting a shot preserves the other photos. Turn the camera back on if needed and capture the empty slot; the collage regenerates when all four slots are filled.
 - Deleting or retaking photos clears the previous export. Photos stay in memory and disappear when the page is refreshed or closed.
 - Use localhost or HTTPS for the full branded export. When opened as a local file, decorative images are omitted from the export to avoid browser canvas restrictions.

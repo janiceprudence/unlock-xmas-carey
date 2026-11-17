@@ -76,7 +76,7 @@
     .booth-print-head{height:15%;min-height:42px;display:flex;justify-content:space-between;align-items:center;padding:0 1.3%;text-align:left}.booth-brand{display:flex;align-items:center;gap:6px;color:#24584d;font-size:clamp(9px,1.4vw,15px);font-weight:1000;letter-spacing:.06em}.booth-brand img{width:clamp(34px,5.8vw,62px);height:100%;max-height:64px;object-fit:contain}.booth-brand small{display:block;margin-top:2px;color:#d64f83;font-size:.65em;letter-spacing:.14em}.booth-date{color:#d64f83;font-size:clamp(9px,1.3vw,13px);font-weight:1000;letter-spacing:.13em;text-align:right}.booth-date small{font-size:.72em;color:#748d82}
     .booth-grid{flex:1;min-height:0;display:grid;grid-template:1fr 1fr / 1fr 1fr;gap:clamp(4px,.8vw,9px)}.photo-cell{position:relative;min-width:0;min-height:0;overflow:hidden;border:3px solid #fff;border-radius:13px;background:linear-gradient(135deg,#fbe4ed,#e7f5ee);box-shadow:0 2px 5px #2e514322}.slot-empty{position:absolute;inset:0;display:grid;align-content:center;justify-items:center;color:#e2749c;font-size:clamp(21px,3vw,34px);font-weight:900}.slot-empty small{margin-top:3px;font-size:clamp(8px,1.1vw,12px);letter-spacing:.15em}.booth-shot{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.photo-cell.has-shot .booth-shot{display:block}.photo-cell.has-shot .slot-empty,.photo-cell.camera-live .slot-empty{display:none}.booth-video{display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}.photo-cell.camera-live .booth-video{display:block}.slot-number{position:absolute;left:6px;top:6px;z-index:2;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#fffdf0;color:#d64f83;font-size:9px;font-weight:900;box-shadow:0 1px 4px #263d3433}.booth-print-foot{height:17%;min-height:36px;display:flex;align-items:center;justify-content:center;position:relative;color:#d64f83;font-size:clamp(8px,1.3vw,14px);font-weight:1000;letter-spacing:.14em}.booth-print-foot img{position:absolute;right:1%;bottom:-27%;width:24%;height:140%;object-fit:contain;pointer-events:none}
     .booth-controls{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0 0}.booth-btn{padding:9px 14px;border:2px solid #d85588;border-radius:999px;background:#f06da0;color:white;font:900 12px "Trebuchet MS",sans-serif;box-shadow:0 3px 0 #c74b7b}.booth-btn:disabled{opacity:.45;box-shadow:none}.booth-snap{border-color:#83cdb8;background:#dff6ed;color:#24584d;box-shadow:0 3px 0 #a9dbc9}.booth-retake{border-color:#c8b7e7;background:#f4efff;color:#5d4a7d;box-shadow:0 3px 0 #c8b7e7}.booth-save{border-color:#e3bd64;background:#fff2c5;color:#785b1e;box-shadow:0 3px 0 #e3bd64}.booth-status{min-height:15px;margin-top:8px;color:#a36a81;font-size:10px;font-weight:700}.booth-btn:not(:disabled){cursor:url("assets/magic-wand-cursor.svg") 3 3,pointer}
-    .photo-delete{display:none;position:absolute;right:6px;top:6px;z-index:3;padding:6px 9px;border:2px solid #fff;border-radius:99px;background:#a22d55;color:#fff;font:700 11px "Trebuchet MS",sans-serif;cursor:pointer;opacity:0}.photo-cell.has-shot .photo-delete{display:block}.photo-cell:hover .photo-delete,.photo-cell:focus-within .photo-delete{opacity:1}.photo-delete:focus-visible{outline:3px solid #24584d;outline-offset:2px}@media(hover:none){.photo-cell.has-shot .photo-delete{opacity:1}}.booth-preview img{display:block;width:100%;max-width:800px;margin:12px auto;border-radius:12px}.booth-preview p{font-size:12px;color:#785b1e}.booth-preview[hidden]{display:none}
+    .photo-delete{display:none;position:absolute;right:6px;top:6px;z-index:3;padding:6px 9px;border:2px solid #fff;border-radius:99px;background:#a22d55;color:#fff;font:700 11px "Trebuchet MS",sans-serif;cursor:pointer;opacity:0}.photo-cell.has-shot .photo-delete{display:block}.photo-cell:hover .photo-delete,.photo-cell:focus-within .photo-delete{opacity:1}.photo-delete:focus-visible{outline:3px solid #24584d;outline-offset:2px}@media(hover:none){.photo-cell.has-shot .photo-delete{opacity:1}}
     @media(max-width:800px){.photo-booth{margin:14px auto 18px;padding:0}.booth-card{border-width:4px;border-radius:18px}.booth-print-head{min-height:32px}.booth-print-foot{min-height:26px}.booth-controls{gap:6px}.booth-btn{padding:8px 11px;font-size:10px}}
     @media(max-width:430px){.booth-heading h2{font-size:22px}.booth-heading p{font-size:10px}.booth-card{padding:6px;gap:4px;border-radius:15px}.booth-grid{gap:4px}.photo-cell{border-width:2px;border-radius:8px}.slot-number{width:17px;height:17px;left:3px;top:3px;font-size:7px}.booth-print-head{min-height:25px}.booth-brand{gap:3px}.booth-brand img{width:28px}.booth-print-foot{min-height:22px;font-size:7px}.booth-print-foot img{width:28%}.booth-btn{padding:8px 9px;font-size:9px}.booth-status{font-size:9px}}
   </style>
@@ -161,7 +161,6 @@
         <button class="booth-btn booth-save" id="boothDownloadButton" hidden>Download photo</button>
         <button class="booth-btn booth-save" id="boothCopyButton" hidden>Copy photo</button>
       </div>
-      <div class="booth-preview" id="boothPreview" hidden><img id="boothPreviewImage" alt="Your completed Strong Bailey Christmas collage" /><p>Right-click or press and hold the image to save or copy it if your browser blocks the buttons.</p><a id="boothSaveLink" download="strong-bailey-christmas-photo-booth.png" target="_blank" rel="noopener">Open / save full-size photo</a></div>
       <div class="booth-status" id="boothStatus" role="status" aria-live="polite">Photos stay on this device.</div>
     </section>
     <section class="playlist" id="playlist" aria-label="Christmas playlist">
@@ -191,10 +190,9 @@
       function clearBoothExport(){
         boothRevision++;boothPhotoBlob=null;
         if(boothPhotoURL)URL.revokeObjectURL(boothPhotoURL);
-        boothPhotoURL=null;$('boothPreview').hidden=true;$('boothPreviewImage').removeAttribute('src');$('boothSaveLink').removeAttribute('href');
+        boothPhotoURL=null;
         boothDownloadButton.hidden=true;boothCopyButton.hidden=true;
       }
-      function showBoothPreview(){$('boothPreview').hidden=false}
       function positionBoothCamera(){
         const index=nextBoothSlot();
         document.querySelectorAll('.photo-cell').forEach(cell=>cell.classList.remove('camera-live'));
@@ -244,8 +242,8 @@
         setBoothStatus('Preparing your photo?');
         composeBooth(boothShots.slice()).then(blob=>{
           if(revision!==boothRevision)return;
-          boothPhotoBlob=blob;boothPhotoURL=URL.createObjectURL(blob);$('boothPreviewImage').src=boothPhotoURL;$('boothSaveLink').href=boothPhotoURL;
-          boothDownloadButton.hidden=false;boothCopyButton.hidden=false;showBoothPreview();
+          boothPhotoBlob=blob;boothPhotoURL=URL.createObjectURL(blob);
+          boothDownloadButton.hidden=false;boothCopyButton.hidden=false;
           setBoothStatus('Your Strong Bailey photo is ready! Download it or copy it below.');
         }).catch(error=>{
           if(revision!==boothRevision)return;
@@ -267,20 +265,20 @@
         ctx.textAlign='center';ctx.fillStyle='#d64f83';ctx.font='900 24px Trebuchet MS,sans-serif';ctx.fillText('✦ MERRY BAILEY CHRISTMAS ✦',500,H-38);if(stickers)ctx.drawImage(stickers,W-440,H-160,365,183);return new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('The browser could not encode the photo.')),'image/png'))}
       boothDownloadButton.addEventListener('click',()=>{
         if(!boothPhotoURL){setBoothStatus('Your photo is still being prepared. Please wait a moment.');return}
-        showBoothPreview();
+
         try{
           const a=document.createElement('a');a.href=boothPhotoURL;a.download='strong-bailey-christmas-photo-booth.png';document.body.appendChild(a);a.click();a.remove();
-          setBoothStatus('Download requested. If no file appears, use the full-size link or right-click / press and hold the preview to save.');
-        }catch(error){console.error('Download failed:',error);setBoothStatus('Download was blocked. Right-click or press and hold the preview to save it.')}
+          setBoothStatus('Download requested. Check your browser downloads.');
+        }catch(error){console.error('Download failed:',error);setBoothStatus('Download was blocked. Allow downloads in your browser and try again.')}
       });
       boothCopyButton.addEventListener('click',async()=>{
         if(!boothPhotoBlob){setBoothStatus('Your photo is still being prepared. Please wait a moment.');return}
         const revision=boothRevision;
         if(!window.isSecureContext||!navigator.clipboard?.write||typeof ClipboardItem==='undefined'){
-          showBoothPreview();setBoothStatus('Photo copying is unavailable here. Open the site over HTTPS or localhost, or right-click / press and hold the preview to copy or save.');return;
+          setBoothStatus('Photo copying is unavailable here. Open the site over HTTPS or localhost, or use Download photo.');return;
         }
         try{await navigator.clipboard.write([new ClipboardItem({'image/png':boothPhotoBlob})]);if(revision===boothRevision)setBoothStatus('Photo copied to your clipboard!')}
-        catch(error){if(revision!==boothRevision)return;console.error('Clipboard write failed:',error);showBoothPreview();setBoothStatus('Clipboard access is blocked. Allow clipboard access in your browser, or right-click / press and hold the preview to copy or save.')}
+        catch(error){if(revision!==boothRevision)return;console.error('Clipboard write failed:',error);setBoothStatus('Clipboard access is blocked. Allow clipboard access in your browser, or use Download photo.')}
       });
       window.addEventListener('pagehide',stopBoothCamera);
       tick();setInterval(tick,1000);
