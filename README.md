@@ -57,16 +57,6 @@ The JavaScript lives inside the `<script>` block near the bottom of [index.html]
 
 Photo capture and export use built-in browser APIs. No Docker, Java service, Python backend, database, or separate Save button is required. Python is only an optional way to serve the files locally.
 
-## Run locally
-
-Serve the folder over HTTP so the Spotify embed and relative assets load consistently:
-
-```bash
-python -m http.server 8000
-```
-
-Then open <http://localhost:8000>. On Windows you can use `py -m http.server 8000` instead. Docker, Java, and a backend are not needed.
-
 ## Photo booth saving and retakes
 
 - After four photos, JavaScript prepares a PNG collage. Download photo saves this collage; no separate Save button is required.
@@ -84,7 +74,7 @@ The countdown currently targets Christmas 2026. To reuse it another year, update
 
 ## Licensing
 
-The website code is licensed under the MIT License (see `LICENSE`).
+The website code is licensed under the MIT License (see [LICENSE](LICENSE)).
 
 Strong Bailey character, logo, and original artwork © 2026 Janice Mook.
 All rights reserved. These assets are not covered by the MIT License.

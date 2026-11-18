@@ -160,6 +160,7 @@
         <button class="booth-btn booth-retake" id="boothRetakeButton" hidden>Retake all</button>
         <button class="booth-btn booth-save" id="boothDownloadButton" hidden>Download photo</button>
         <button class="booth-btn booth-save" id="boothCopyButton" hidden>Copy photo</button>
+        <button class="booth-btn booth-save" id="boothShareButton" hidden>Share photo</button>
       </div>
       <div class="booth-status" id="boothStatus" role="status" aria-live="polite">Photos stay on this device.</div>
     </section>
@@ -227,7 +228,7 @@
         boothRevision++;boothPhotoBlob=null;
         if(boothPhotoURL)URL.revokeObjectURL(boothPhotoURL);
         boothPhotoURL=null;
-        boothDownloadButton.hidden=true;boothCopyButton.hidden=true;
+        boothDownloadButton.hidden=true;boothCopyButton.hidden=true;boothShareButton.hidden=true;
       }
       function positionBoothCamera(){
         const index=nextBoothSlot();
@@ -279,7 +280,9 @@
         composeBooth(boothShots.slice()).then(blob=>{
           if(revision!==boothRevision)return;
           boothPhotoBlob=blob;boothPhotoURL=URL.createObjectURL(blob);
-          boothDownloadButton.hidden=false;boothCopyButton.hidden=false;
+          boothDownloadButton.hidden=false;
+          boothCopyButton.hidden=!window.isSecureContext||!navigator.clipboard?.write||typeof ClipboardItem==='undefined'||ClipboardItem.supports?.('image/png')===false;
+          boothShareButton.hidden=!photoShareData();
           setBoothStatus('Your Strong Bailey photo is ready! Download it or copy it below.');
         }).catch(error=>{
           if(revision!==boothRevision)return;
@@ -307,6 +310,23 @@
           setBoothStatus('Download requested. Check your browser downloads.');
         }catch(error){console.error('Download failed:',error);setBoothStatus('Download was blocked. Allow downloads in your browser and try again.')}
       });
+      function photoShareData(){
+        if(!boothPhotoBlob||!navigator.share||!navigator.canShare)return null;
+        const file=new File([boothPhotoBlob],'strong-bailey-christmas-photo-booth.png',{type:'image/png'});
+        const data={files:[file]};
+        return navigator.canShare(data)?data:null;
+      }
+      boothShareButton.addEventListener('click',async()=>{
+        const data=photoShareData();
+        if(!data){setBoothStatus('Sharing is unavailable here. Use Download photo.');return}
+        const revision=boothRevision;
+        try{await navigator.share(data)}
+        catch(error){
+          if(error.name!=='AbortError'&&revision===boothRevision){
+            setBoothStatus('Sharing was blocked. Use Download photo.');
+          }
+        }
+      });
       boothCopyButton.addEventListener('click',async()=>{
         if(!boothPhotoBlob){setBoothStatus('Your photo is still being prepared. Please wait a moment.');return}
         const revision=boothRevision;
@@ -314,7 +334,7 @@
           setBoothStatus('Photo copying is unavailable here. Open the site over HTTPS or localhost, or use Download photo.');return;
         }
         try{await navigator.clipboard.write([new ClipboardItem({'image/png':boothPhotoBlob})]);if(revision===boothRevision)setBoothStatus('Photo copied to your clipboard!')}
-        catch(error){if(revision!==boothRevision)return;console.error('Clipboard write failed:',error);setBoothStatus('Clipboard access is blocked. Allow clipboard access in your browser, or use Download photo.')}
+        catch(error){if(revision!==boothRevision)return;console.error('Clipboard write failed:',error);setBoothStatus('Clipboard access is blocked. Open the site directly in your browser, or use the available share or download options.')}
       });
       window.addEventListener('pagehide',stopBoothCamera);
       tick();setInterval(tick,1000);
