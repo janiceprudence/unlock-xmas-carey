@@ -84,10 +84,10 @@ The countdown currently targets Christmas 2026. To reuse it another year, update
 
 ## Licensing
 
-The website code is licensed under the MIT License (see [LICENSE](LICENSE)).
+The website code is licensed under the MIT License (see `LICENSE`).
 
 Strong Bailey character, logo, and original artwork © 2026 Janice Mook.
 All rights reserved. These assets are not covered by the MIT License.
 
 Third-party images, likenesses, and playlist content remain subject to
-their respective rights holders' terms.
+their respective rights holders’ terms.
